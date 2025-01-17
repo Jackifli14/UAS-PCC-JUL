@@ -22,15 +22,15 @@ jobs:
     - name: Log in to Docker Hub
       uses: docker/login-action@v2
       with:
-        username: ${{ secrets.DOCKER_USERNAME }}  # Gunakan secret Docker Hub username
-        password: ${{ secrets.DOCKER_PASSWORD }}  # Gunakan secret Docker Hub password
+        username: ${{ secrets.USERNAME }}  # Gunakan secret Docker Hub username
+        password: ${{ secrets.ACCESS_TOKEN }}  # Gunakan secret Docker Hub password
 
     # Langkah 4: Build Docker image dengan tag terbaru
     - name: Build Docker image
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}julkiflisihombing14/uas-pcc-jul -f Dockerfile .
+        docker build -t ${{ secrets.USERNAME }}julkiflisihombing14/uas-pcc-jul -f Dockerfile .
 
     # Langkah 5: Push Docker image ke Docker Hub
     - name: Push Docker image
       run: |
-        docker push ${{ secrets.DOCKER_USERNAME }}julkiflisihombing14/uas-pcc-jul:latest
+        docker push ${{ secrets.USERNAME }}julkiflisihombing14/uas-pcc-jul:latest
