@@ -33,4 +33,4 @@ jobs:
     # Langkah 5: Push Docker image ke Docker Hub
     - name: Push Docker image
       run: |
-        docker push ${{ secrets.USERNAME }}/uas-pcc-jul:v2
+        docker push ${{ secrets.USERNAME }}/uas-pcc-jul:latest
