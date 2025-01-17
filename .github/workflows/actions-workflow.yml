@@ -23,7 +23,7 @@ jobs:
       uses: docker/login-action@v2
       with:
         username: ${{ secrets.USERNAME }}  # Gunakan secret Docker Hub username
-        password: ${{ secrets.ACCESS_TOKEN }}  # Gunakan secret Docker Hub password
+        password: ${{ secrets.ACCESS }}  # Gunakan secret Docker Hub password
 
     # Langkah 4: Build Docker image dengan tag terbaru
     - name: Build Docker image
